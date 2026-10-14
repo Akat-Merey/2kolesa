@@ -51,7 +51,7 @@ class User extends Authenticatable
         ];
     }
 
-    public function motorcycle(): HasMany 
+    public function motorcycles(): HasMany 
     {
         return $this->hasMany(Motorcycle::class);
     }

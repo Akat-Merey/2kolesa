@@ -1,0 +1,33 @@
+$kind: http-request
+url: "{{base_url}}/api/motorcycles"
+method: POST
+headers:
+  Accept: application/json
+body:
+  type: json
+  content: "{\r
+
+    \    \"brand_id\": 1,\r
+
+    \    \"category_id\": 1,\r
+
+    \    \"city_id\": 1,\r
+
+    \    \"model\": \"CBR600RR\",\r
+
+    \    \"year\": 2021,\r
+
+    \    \"price\": 4500000,\r
+
+    \    \"engine_cc\": 600,\r
+
+    \    \"mileage\": 12000,\r
+
+    \    \"description\": \"Отличное состояние\"\r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: 7|TViog0VRzbR9mwTqRDGHpVquJ4vc3Iqw57m45pPL85256c2d
+order: 4000

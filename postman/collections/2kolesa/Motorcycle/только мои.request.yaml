@@ -1,0 +1,10 @@
+$kind: http-request
+url: "{{base_url}}/api/me/motorcycles"
+method: GET
+headers:
+  Accept: application/json
+auth:
+  type: bearer
+  credentials:
+    token: 7|TViog0VRzbR9mwTqRDGHpVquJ4vc3Iqw57m45pPL85256c2d
+order: 1180

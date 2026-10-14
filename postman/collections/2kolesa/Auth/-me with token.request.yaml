@@ -1,0 +1,11 @@
+$kind: http-request
+name: /me with token
+url: "{{base_url}}/api/me"
+method: GET
+headers:
+  Accept: application/json
+auth:
+  type: bearer
+  credentials:
+    token: 5|LUeA9IVZJe6VafNF6VsnBhOgweCy8sNv8EFUiNyH45456ad9
+order: 4000

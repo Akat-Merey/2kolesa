@@ -1,0 +1,13 @@
+$kind: http-request
+url: "{{base_url}}/api/motorcycles/52"
+method: PATCH
+headers:
+  Accept: application/json
+body:
+  type: json
+  content: "{\r\n    \"status\": \"sold\"\r\n}"
+auth:
+  type: bearer
+  credentials:
+    token: 7|TViog0VRzbR9mwTqRDGHpVquJ4vc3Iqw57m45pPL85256c2d
+order: 3000

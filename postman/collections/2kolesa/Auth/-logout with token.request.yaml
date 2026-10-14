@@ -1,0 +1,11 @@
+$kind: http-request
+name: /logout with token
+url: "{{base_url}}/api/logout"
+method: POST
+headers:
+  Accept: apllication/json
+auth:
+  type: bearer
+  credentials:
+    token: 6|Z5DLIXw8aVPiGeZ4yb18eCO3qFWoK63zi17ZoEUf7d5eba6d
+order: 1000

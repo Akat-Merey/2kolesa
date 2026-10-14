@@ -1,0 +1,8 @@
+workspace:
+  id: 261cba64-43d3-4819-9bfe-131a3ec28c5c
+
+# Each entry here maps a local resource to one or more corresponding objects in Postman Cloud
+
+cloudResources:
+  collections:
+    ../postman/collections/2kolesa: 53640925-99ca6004-dd11-4efa-a739-2deebbe31a43
