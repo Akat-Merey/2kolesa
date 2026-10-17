@@ -25,6 +25,10 @@ class Motorcycle extends Model
         'status',
     ];
 
+    protected $attributes = [
+        'status' => 'active',
+    ];
+
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);

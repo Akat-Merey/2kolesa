@@ -64,6 +64,6 @@ class MotorcycleController extends Controller
             ->latest()
             ->paginate(15);
         
-            return MotorcycleResource::collection($motorcycles);
+        return MotorcycleResource::collection($motorcycles);
     }
 }
