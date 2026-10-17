@@ -1,5 +1,5 @@
 $kind: http-request
-url: "{{base_url}}/api/motorcycles/51"
+url: "{{base_url}}/api/motorcycles/21"
 method: DELETE
 headers:
   Accept: application/json

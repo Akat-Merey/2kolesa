@@ -36,6 +36,7 @@ class MotorcycleResource extends JsonResource
                 'name' => $this->user->name,
                 'phone' => $this->user->phone,
             ]),
+            'images' => MotorcycleImageResource::collection($this->whenLoaded('images')),
 
             'created_at' => $this->created_at,
         ];

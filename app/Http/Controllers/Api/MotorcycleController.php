@@ -11,10 +11,11 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Storage;
 
 class MotorcycleController extends Controller
 {
-    private const RELATIONS = ['brand', 'category', 'city', 'user'];
+    private const RELATIONS = ['brand', 'category', 'city', 'user', 'images'];
 
     public function index(): AnonymousResourceCollection
     {
@@ -51,6 +52,7 @@ class MotorcycleController extends Controller
     {
         Gate::authorize('delete', $motorcycle);
 
+        Storage::disk('public')->deleteDirectory("motorcycles/{$motorcycle->id}");
         $motorcycle->delete();
 
         return response()->noContent();

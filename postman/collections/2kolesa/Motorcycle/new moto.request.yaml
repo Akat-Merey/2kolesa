@@ -29,5 +29,5 @@ body:
 auth:
   type: bearer
   credentials:
-    token: 7|TViog0VRzbR9mwTqRDGHpVquJ4vc3Iqw57m45pPL85256c2d
+    token: 8|EfOoR0bbw0dhNaKfeL9YHIyAqyb66ltYn45fF0aMf29c827e
 order: 4000

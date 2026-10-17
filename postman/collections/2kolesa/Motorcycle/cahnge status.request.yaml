@@ -1,5 +1,5 @@
 $kind: http-request
-url: "{{base_url}}/api/motorcycles/52"
+url: "{{base_url}}/api/motorcycles/49"
 method: PATCH
 headers:
   Accept: application/json

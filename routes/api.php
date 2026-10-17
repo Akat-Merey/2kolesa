@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\MotorcycleController;
+use App\Http\Controllers\Api\MotorcycleImageController;
 use Illuminate\Support\Facades\Route;
 
 Route::post('/register', [AuthController::class, 'register']);
@@ -18,4 +19,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('motorcycles', [MotorcycleController::class, 'store']);
     Route::patch('motorcycles/{motorcycle}', [MotorcycleController::class, 'update']);
     Route::delete('motorcycles/{motorcycle}', [MotorcycleController::class, 'destroy']);
+
+    Route::post('/motorcycles/{motorcycle}/images', [MotorcycleImageController::class, 'store']);
+    Route::delete('/images/{image}', [MotorcycleImageController::class, 'destroy']);
 });
