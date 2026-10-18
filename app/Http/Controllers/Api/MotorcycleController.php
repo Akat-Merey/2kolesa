@@ -12,17 +12,22 @@ use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Storage;
+use App\Http\Requests\Motorcycle\FilterMotorcycleRequest;
 
 class MotorcycleController extends Controller
 {
     private const RELATIONS = ['brand', 'category', 'city', 'user', 'images'];
 
-    public function index(): AnonymousResourceCollection
+    public function index(FilterMotorcycleRequest $request): AnonymousResourceCollection
     {
+        $filters = $request->validated();
+
         $motorcycles = Motorcycle::with(self::RELATIONS)
-            ->where('status', 'active')
-            ->latest()
-            ->paginate(15);
+            ->active()
+            ->filter($filters)
+            ->sort($filters['sort'] ?? null)
+            ->paginate(15)
+            ->withQueryString();
 
         return MotorcycleResource::collection($motorcycles);
     }

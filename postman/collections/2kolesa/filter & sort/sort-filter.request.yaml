@@ -1,0 +1,10 @@
+$kind: http-request
+name: sort/filter
+url: "{{base_url}}/api/motorcycles?sort=price_asc&page=3"
+method: GET
+headers:
+  Accept: applicaiton/json
+queryParams:
+  sort: price_asc
+  page: "3"
+order: 1000

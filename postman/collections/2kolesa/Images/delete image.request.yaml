@@ -1,17 +1,8 @@
 $kind: http-request
-url: "{{base_url}}/api/images/8"
+url: "{{base_url}}/api/images/9"
 method: DELETE
 headers:
   Accept: application/json
-body:
-  type: formdata
-  content:
-    - type: file
-      key: images[]
-      src:
-        - /C:/Users/akhat/Downloads/images (1).jpg
-      description: ""
-      disabled: false
 auth:
   type: bearer
   credentials:
