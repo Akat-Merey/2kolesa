@@ -16,13 +16,11 @@ use App\Http\Requests\Motorcycle\FilterMotorcycleRequest;
 
 class MotorcycleController extends Controller
 {
-    private const RELATIONS = ['brand', 'category', 'city', 'user', 'images'];
-
     public function index(FilterMotorcycleRequest $request): AnonymousResourceCollection
     {
         $filters = $request->validated();
 
-        $motorcycles = Motorcycle::with(self::RELATIONS)
+        $motorcycles = Motorcycle::with(Motorcycle::RELATIONS)
             ->active()
             ->filter($filters)
             ->sort($filters['sort'] ?? null)
@@ -34,14 +32,14 @@ class MotorcycleController extends Controller
 
     public function show(Motorcycle $motorcycle): MotorcycleResource
     {
-        return new MotorcycleResource($motorcycle->load(self::RELATIONS));
+        return new MotorcycleResource($motorcycle->load(Motorcycle::RELATIONS));
     }
 
     public function store(StoreMotorcycleRequest $request): MotorcycleResource
     {
         $motorcycle = $request->user()->motorcycles()->create($request->validated());
 
-        return new MotorcycleResource($motorcycle->load(self::RELATIONS));
+        return new MotorcycleResource($motorcycle->load(Motorcycle::RELATIONS));
     }   
 
     public function update(UpdateMotorcycleRequest $request, Motorcycle $motorcycle): MotorcycleResource
@@ -50,7 +48,7 @@ class MotorcycleController extends Controller
 
         $motorcycle->update($request->validated());
 
-        return new MotorcycleResource($motorcycle->load(self::RELATIONS));
+        return new MotorcycleResource($motorcycle->load(Motorcycle::RELATIONS));
     }
 
     public function destroy(Motorcycle $motorcycle): Response
@@ -67,7 +65,7 @@ class MotorcycleController extends Controller
     {
         $motorcycles = $request->user()
             ->motorcycles()
-            ->with(self::RELATIONS)
+            ->with(Motorcycle::RELATIONS)
             ->latest()
             ->paginate(15);
         

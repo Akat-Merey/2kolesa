@@ -30,6 +30,8 @@ class Motorcycle extends Model
         'status' => 'active',
     ];
 
+    public const RELATIONS = ['brand', 'category', 'city', 'user', 'images'];
+
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
